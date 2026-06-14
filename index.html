@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canada Cleaning | Professional Services</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hide scrollbar for clean slider */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden w-full">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <i data-lucide="sparkles" class="h-8 w-8 text-emerald-500 mr-2 transition-transform group-hover:scale-110"></i>
+                    <span id="nav-logo-text" class="font-bold text-2xl tracking-tight transition-colors text-white">
+                        Canada <span class="text-emerald-500">Cleaning</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#services" class="nav-link text-sm font-semibold tracking-wide transition-colors hover:text-emerald-500 text-slate-200">Services</a>
+                    <a href="#about" class="nav-link text-sm font-semibold tracking-wide transition-colors hover:text-emerald-500 text-slate-200">About</a>
+                    <a href="#process" class="nav-link text-sm font-semibold tracking-wide transition-colors hover:text-emerald-500 text-slate-200">Process</a>
+                    <a href="#testimonials" class="nav-link text-sm font-semibold tracking-wide transition-colors hover:text-emerald-500 text-slate-200">Testimonials</a>
+                    <a href="#faq" class="nav-link text-sm font-semibold tracking-wide transition-colors hover:text-emerald-500 text-slate-200">FAQ</a>
+                    
+                    <div class="flex items-center space-x-4 pl-4 border-l border-slate-400/30">
+                        <!-- Dark Mode Toggle Desktop -->
+                        <button id="darkModeToggle" class="p-2 rounded-full transition-all text-white hover:bg-white/20">
+                            <i data-lucide="moon" id="moonIcon" class="w-5 h-5 block"></i>
+                            <i data-lucide="sun" id="sunIcon" class="w-5 h-5 hidden"></i>
+                        </button>
+
+                        <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-emerald-500/30 hover:-translate-y-0.5">
+                            Get a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center space-x-2 sm:space-x-4">
+                    <button id="darkModeToggleMobile" class="p-2 rounded-full transition-colors text-white hover:bg-white/20">
+                        <i data-lucide="moon" id="moonIconMobile" class="w-6 h-6 block"></i>
+                        <i data-lucide="sun" id="sunIconMobile" class="w-6 h-6 hidden"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="p-2 rounded-lg transition-colors text-white hover:bg-white/20" aria-label="Toggle menu">
+                        <i data-lucide="menu" id="menuIcon" class="w-7 h-7 block"></i>
+                        <i data-lucide="x" id="closeIcon" class="w-7 h-7 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="lg:hidden absolute top-20 left-0 w-full transition-all duration-300 ease-in-out origin-top opacity-0 scale-y-95 invisible bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-2xl shadow-slate-900/10 dark:shadow-black/50">
+            <div class="px-4 pt-4 pb-6 space-y-2 max-h-[calc(100vh-80px)] overflow-y-auto">
+                <a href="#services" class="mobile-nav-link block w-full text-left px-4 py-3.5 text-base font-semibold transition-colors rounded-xl text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400">Services</a>
+                <a href="#about" class="mobile-nav-link block w-full text-left px-4 py-3.5 text-base font-semibold transition-colors rounded-xl text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400">About</a>
+                <a href="#process" class="mobile-nav-link block w-full text-left px-4 py-3.5 text-base font-semibold transition-colors rounded-xl text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400">Process</a>
+                <a href="#testimonials" class="mobile-nav-link block w-full text-left px-4 py-3.5 text-base font-semibold transition-colors rounded-xl text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400">Testimonials</a>
+                <a href="#faq" class="mobile-nav-link block w-full text-left px-4 py-3.5 text-base font-semibold transition-colors rounded-xl text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400">FAQ</a>
+                <a href="#contact" class="mobile-nav-link block w-full text-left px-4 py-3.5 text-base font-semibold transition-colors rounded-xl text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400">Contact</a>
+                <div class="pt-4 pb-2 px-2">
+                    <a href="#contact" class="mobile-nav-link w-full bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-4 rounded-xl font-bold transition-all shadow-lg shadow-emerald-500/30 flex justify-center items-center text-lg">
+                        Get a Free Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative flex flex-col min-h-[100svh] overflow-hidden">
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80" 
+                alt="Professional Cleaning" 
+                class="w-full h-full object-cover"
+            />
+            <div id="heroOverlay" class="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-900/70 to-blue-900/90 dark:from-slate-900/95 dark:via-slate-900/80 dark:to-slate-900/95 transition-colors duration-300"></div>
+        </div>
+
+        <!-- Main Hero Content -->
+        <div class="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex-grow flex flex-col justify-center pt-32 pb-32 lg:pb-40">
+            <div class="inline-flex items-center py-1.5 px-4 rounded-full bg-white/10 text-emerald-300 font-bold tracking-widest text-xs sm:text-sm mb-6 border border-white/20 backdrop-blur-md shadow-sm mx-auto">
+                <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i>
+                TOP RATED IN CANADA
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight md:leading-[1.1] mb-6 drop-shadow-2xl tracking-tight">
+                Professional Cleaning Services <br class="hidden md:block" />
+                <span class="text-emerald-400">You Can Trust</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-200 mb-10 drop-shadow-md px-2">
+                We provide top-tier residential and commercial cleaning solutions. Reclaim your time and let our experienced team handle the mess.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full max-w-md mx-auto sm:max-w-none px-4 sm:px-0">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold text-lg transition-all hover:-translate-y-1 shadow-lg shadow-emerald-500/30 flex items-center justify-center group">
+                    Get a Free Quote
+                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="tel:180025326" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md rounded-full font-bold text-lg transition-all hover:-translate-y-1 flex items-center justify-center">
+                    <i data-lucide="phone-call" class="mr-2 w-5 h-5"></i>
+                    1-800-CLEAN
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges (Pulled Up via Negative Margin) -->
+    <div class="relative z-20 -mt-24 sm:-mt-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white/95 dark:bg-slate-800/95 border border-white dark:border-slate-700 shadow-2xl shadow-blue-900/10 dark:shadow-black/50 backdrop-blur-xl rounded-2xl p-6 md:p-8 grid grid-cols-2 gap-y-8 gap-x-4 md:grid-cols-4 md:gap-y-0 md:divide-x divide-slate-200 dark:divide-slate-700 transition-colors duration-300">
+            <div class="flex flex-col items-center justify-center px-2 group text-center">
+                <div class="p-3.5 rounded-2xl mb-4 transition-colors duration-300 bg-emerald-50 dark:bg-slate-700 group-hover:bg-emerald-100 dark:group-hover:bg-slate-600">
+                    <i data-lucide="shield-check" class="h-7 w-7 sm:h-8 sm:w-8 text-emerald-500 transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <span class="font-semibold text-sm sm:text-base text-slate-800 dark:text-slate-200">Fully Insured</span>
+            </div>
+            <div class="flex flex-col items-center justify-center px-2 group text-center">
+                <div class="p-3.5 rounded-2xl mb-4 transition-colors duration-300 bg-emerald-50 dark:bg-slate-700 group-hover:bg-emerald-100 dark:group-hover:bg-slate-600">
+                    <i data-lucide="star" class="h-7 w-7 sm:h-8 sm:w-8 text-emerald-500 transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <span class="font-semibold text-sm sm:text-base text-slate-800 dark:text-slate-200">5-Star Rated</span>
+            </div>
+            <div class="flex flex-col items-center justify-center px-2 group text-center">
+                <div class="p-3.5 rounded-2xl mb-4 transition-colors duration-300 bg-emerald-50 dark:bg-slate-700 group-hover:bg-emerald-100 dark:group-hover:bg-slate-600">
+                    <i data-lucide="leaf" class="h-7 w-7 sm:h-8 sm:w-8 text-emerald-500 transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <span class="font-semibold text-sm sm:text-base text-slate-800 dark:text-slate-200">Eco-Friendly</span>
+            </div>
+            <div class="flex flex-col items-center justify-center px-2 group text-center">
+                <div class="p-3.5 rounded-2xl mb-4 transition-colors duration-300 bg-emerald-50 dark:bg-slate-700 group-hover:bg-emerald-100 dark:group-hover:bg-slate-600">
+                    <i data-lucide="thumbs-up" class="h-7 w-7 sm:h-8 sm:w-8 text-emerald-500 transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <span class="font-semibold text-sm sm:text-base text-slate-800 dark:text-slate-200">100% Guaranteed</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-emerald-500 font-semibold tracking-wide uppercase mb-2">Our Services</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Cleaning Solutions for Every Need</h3>
+                <p class="text-lg text-slate-600 dark:text-slate-400">From cozy apartments to large corporate offices, our specialized teams are equipped to handle any cleaning challenge with precision.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-slate-800 hover:shadow-xl border border-slate-100 dark:border-slate-700">
+                    <div class="h-14 w-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:bg-emerald-500 transition-colors duration-300">
+                        <i data-lucide="home" class="h-7 w-7 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Residential Cleaning</h4>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Complete home cleaning services tailored to your lifestyle. Kitchens, bathrooms, dusting, and floors.</p>
+                    <a href="#contact" class="flex items-center text-emerald-500 font-semibold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-slate-800 hover:shadow-xl border border-slate-100 dark:border-slate-700">
+                    <div class="h-14 w-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:bg-emerald-500 transition-colors duration-300">
+                        <i data-lucide="building-2" class="h-7 w-7 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Commercial Cleaning</h4>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Maintain a pristine professional environment. Office spaces, retail stores, and corporate facilities.</p>
+                    <a href="#contact" class="flex items-center text-emerald-500 font-semibold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-slate-800 hover:shadow-xl border border-slate-100 dark:border-slate-700">
+                    <div class="h-14 w-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:bg-emerald-500 transition-colors duration-300">
+                        <i data-lucide="sparkles" class="h-7 w-7 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Deep Cleaning</h4>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Intensive top-to-bottom cleaning targeting hidden grime, baseboards, and hard-to-reach areas.</p>
+                    <a href="#contact" class="flex items-center text-emerald-500 font-semibold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-slate-800 hover:shadow-xl border border-slate-100 dark:border-slate-700">
+                    <div class="h-14 w-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:bg-emerald-500 transition-colors duration-300">
+                        <i data-lucide="arrow-right" class="h-7 w-7 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Move-In / Move-Out</h4>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Ensure you leave or enter a spotless space. Comprehensive sanitization for smooth transitions.</p>
+                    <a href="#contact" class="flex items-center text-emerald-500 font-semibold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-slate-800 hover:shadow-xl border border-slate-100 dark:border-slate-700">
+                    <div class="h-14 w-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:bg-emerald-500 transition-colors duration-300">
+                        <i data-lucide="brush" class="h-7 w-7 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Post-Construction</h4>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Specialized dust removal and detailing after renovations or new builds.</p>
+                    <a href="#contact" class="flex items-center text-emerald-500 font-semibold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="group rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 bg-white dark:bg-slate-800 hover:shadow-xl border border-slate-100 dark:border-slate-700">
+                    <div class="h-14 w-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-6 group-hover:bg-emerald-500 transition-colors duration-300">
+                        <i data-lucide="sofa" class="h-7 w-7 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Carpet & Upholstery</h4>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Deep stain removal and fabric refreshing using advanced steam cleaning technology.</p>
+                    <a href="#contact" class="flex items-center text-emerald-500 font-semibold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 md:py-20 bg-blue-600 dark:bg-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center text-white">
+                <div class="flex flex-col items-center">
+                    <div class="h-20 w-20 rounded-full bg-white/10 flex items-center justify-center mb-6 backdrop-blur-sm">
+                        <i data-lucide="shield-check" class="h-10 w-10 text-emerald-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Experienced Team</h4>
+                    <p class="text-blue-100">Vetted, trained, and highly professional cleaning staff.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="h-20 w-20 rounded-full bg-white/10 flex items-center justify-center mb-6 backdrop-blur-sm">
+                        <i data-lucide="leaf" class="h-10 w-10 text-emerald-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Eco-Friendly Products</h4>
+                    <p class="text-blue-100">Safe for your family, pets, and the environment.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="h-20 w-20 rounded-full bg-white/10 flex items-center justify-center mb-6 backdrop-blur-sm">
+                        <i data-lucide="clock" class="h-10 w-10 text-emerald-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Reliable Service</h4>
+                    <p class="text-blue-100">We show up on time and deliver consistent results.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="h-20 w-20 rounded-full bg-white/10 flex items-center justify-center mb-6 backdrop-blur-sm">
+                        <i data-lucide="thumbs-up" class="h-10 w-10 text-emerald-400"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Satisfaction Guaranteed</h4>
+                    <p class="text-blue-100">Not happy? We will re-clean it at no extra cost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-32 bg-white dark:bg-slate-900 overflow-hidden relative transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                
+                <!-- Left: Premium Overlapping Images -->
+                <div class="lg:w-1/2 relative w-full max-w-md mx-auto lg:max-w-none px-4 sm:px-0">
+                    <!-- Decorative Background Glow (Subtle) -->
+                    <div class="absolute top-1/4 -left-12 w-64 h-64 bg-emerald-400 rounded-full mix-blend-multiply filter blur-[80px] opacity-20 dark:opacity-10 pointer-events-none"></div>
+                    <div class="absolute bottom-1/4 -right-12 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-[80px] opacity-20 dark:opacity-10 pointer-events-none"></div>
+                    
+                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-800 group">
+                        <img 
+                            src="https://images.unsplash.com/photo-1584820927508-cade280eb4cb?auto=format&fit=crop&q=80" 
+                            alt="Professional Cleaning Team" 
+                            class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    
+                    <!-- Floating Experience Badge -->
+                    <div class="absolute -bottom-8 -right-2 sm:-right-8 bg-white dark:bg-slate-800 border-white dark:border-slate-700 p-4 sm:p-6 rounded-2xl shadow-xl border-4 z-20 flex items-center gap-4 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="h-12 w-12 sm:h-14 sm:w-14 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-6 w-6 sm:h-7 sm:w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-none mb-1">5+</p>
+                            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Years Exp.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Content & Stats -->
+                <div class="lg:w-1/2 relative z-10 pt-8 sm:pt-0">
+                    <div class="inline-flex items-center space-x-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-4 py-2 rounded-full font-semibold tracking-wide uppercase text-sm mb-6 border border-emerald-100 dark:border-emerald-800/50 shadow-sm">
+                        <i data-lucide="sparkles" class="h-4 w-4 animate-pulse"></i>
+                        <span>About Our Company</span>
+                    </div>
+                    
+                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 leading-[1.15] tracking-tight">
+                        Setting the <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-blue-500">Gold Standard</span> in Cleanliness
+                    </h3>
+                    
+                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                        Founded with a mission to bring unparalleled hygiene to homes and businesses across Canada, we are more than just a cleaning service. We are your dedicated partners in maintaining a healthy, productive, and beautiful environment.
+                    </p>
+                    
+                    <!-- Premium Checklist -->
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center mt-0.5 mr-4 border border-emerald-200 dark:border-emerald-800">
+                                <i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-600 dark:text-emerald-400"></i>
+                            </div>
+                            <span class="text-base md:text-lg font-medium text-slate-700 dark:text-slate-300">Rigorously trained & background-checked staff</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center mt-0.5 mr-4 border border-emerald-200 dark:border-emerald-800">
+                                <i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-600 dark:text-emerald-400"></i>
+                            </div>
+                            <span class="text-base md:text-lg font-medium text-slate-700 dark:text-slate-300">100% eco-friendly, family-safe cleaning products</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center mt-0.5 mr-4 border border-emerald-200 dark:border-emerald-800">
+                                <i data-lucide="check-circle-2" class="h-4 w-4 text-emerald-600 dark:text-emerald-400"></i>
+                            </div>
+                            <span class="text-base md:text-lg font-medium text-slate-700 dark:text-slate-300">Customized cleaning plans to fit your lifestyle</span>
+                        </li>
+                    </ul>
+                    
+                    <!-- Minimalist Stats Grid -->
+                    <div class="pt-8 border-t border-slate-200 dark:border-slate-800">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4">
+                            <div class="flex flex-col">
+                                <span class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">1000+</span>
+                                <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Homes Cleaned</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">500+</span>
+                                <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Happy Clients</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">5+</span>
+                                <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Years Exp.</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-1 tracking-tight">98%</span>
+                                <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-emerald-500 font-semibold tracking-wide uppercase mb-2">How It Works</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">A Simple 4-Step Process</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-emerald-500/30 z-0"></div>
+
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl font-bold shadow-lg shadow-emerald-500/40 mb-6 border-4 border-white dark:border-slate-800 transition-colors">01</div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Request a Quote</h4>
+                    <p class="text-slate-600 dark:text-slate-400">Fill out our quick online form or call us to get a transparent, no-obligation estimate.</p>
+                </div>
+                
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl font-bold shadow-lg shadow-emerald-500/40 mb-6 border-4 border-white dark:border-slate-800 transition-colors">02</div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Schedule Service</h4>
+                    <p class="text-slate-600 dark:text-slate-400">Choose a date and time that fits your busy schedule. We offer flexible booking options.</p>
+                </div>
+                
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl font-bold shadow-lg shadow-emerald-500/40 mb-6 border-4 border-white dark:border-slate-800 transition-colors">03</div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Professional Cleaning</h4>
+                    <p class="text-slate-600 dark:text-slate-400">Our vetted, trained experts arrive on time and transform your space using eco-friendly products.</p>
+                </div>
+                
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl font-bold shadow-lg shadow-emerald-500/40 mb-6 border-4 border-white dark:border-slate-800 transition-colors">04</div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Enjoy a Spotless Space</h4>
+                    <p class="text-slate-600 dark:text-slate-400">Relax and enjoy your pristine environment, backed by our 100% satisfaction guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Gallery -->
+    <section class="py-16 md:py-24 bg-white dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-emerald-500 font-semibold tracking-wide uppercase mb-2">Our Work</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Before & After Results</h3>
+                <p class="text-lg text-slate-600 dark:text-slate-400">Interact with the sliders below to reveal the stunning transformations achieved by our professional cleaning teams.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Slider 1 -->
+                <div class="bna-container relative h-80 md:h-[400px] w-full rounded-2xl overflow-hidden cursor-ew-resize group shadow-xl touch-none select-none border border-slate-200 dark:border-slate-700">
+                    <!-- After Image -->
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745a872f?auto=format&fit=crop&q=80&w=1200" alt="Kitchen After" class="absolute inset-0 w-full h-full object-cover pointer-events-none" draggable="false" />
+                    <div class="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold z-0 shadow-lg uppercase tracking-wider">After</div>
+                    
+                    <!-- Before Image -->
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=1200" alt="Kitchen Before" class="bna-foreground absolute inset-0 w-full h-full object-cover z-10 pointer-events-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);" draggable="false" />
+                    <div class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold z-20 shadow-lg uppercase tracking-wider transition-opacity duration-200">Before</div>
+                    
+                    <!-- Handle -->
+                    <div class="bna-handle absolute inset-y-0 w-1 bg-white z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] pointer-events-none" style="left: 50%; transform: translateX(-50%);">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-[0_0_15px_rgba(0,0,0,0.4)] flex items-center justify-center border border-slate-100 transition-transform group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600"><path d="m10 17-5-5 5-5"/><path d="m14 17 5-5-5-5"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 z-30 pointer-events-none">
+                        <h4 class="text-white text-xl font-bold drop-shadow-lg">Kitchen Detailing</h4>
+                    </div>
+                </div>
+
+                <!-- Slider 2 -->
+                <div class="bna-container relative h-80 md:h-[400px] w-full rounded-2xl overflow-hidden cursor-ew-resize group shadow-xl touch-none select-none border border-slate-200 dark:border-slate-700">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1200" alt="Living Room After" class="absolute inset-0 w-full h-full object-cover pointer-events-none" draggable="false" />
+                    <div class="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold z-0 shadow-lg uppercase tracking-wider">After</div>
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28e50b7ef40?auto=format&fit=crop&q=80&w=1200" alt="Living Room Before" class="bna-foreground absolute inset-0 w-full h-full object-cover z-10 pointer-events-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);" draggable="false" />
+                    <div class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold z-20 shadow-lg uppercase tracking-wider transition-opacity duration-200">Before</div>
+                    <div class="bna-handle absolute inset-y-0 w-1 bg-white z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] pointer-events-none" style="left: 50%; transform: translateX(-50%);">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-[0_0_15px_rgba(0,0,0,0.4)] flex items-center justify-center border border-slate-100 transition-transform group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600"><path d="m10 17-5-5 5-5"/><path d="m14 17 5-5-5-5"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 z-30 pointer-events-none">
+                        <h4 class="text-white text-xl font-bold drop-shadow-lg">Living Space Refresh</h4>
+                    </div>
+                </div>
+
+                <!-- Slider 3 -->
+                <div class="bna-container relative h-80 md:h-[400px] w-full rounded-2xl overflow-hidden cursor-ew-resize group shadow-xl touch-none select-none border border-slate-200 dark:border-slate-700">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1200" alt="Office After" class="absolute inset-0 w-full h-full object-cover pointer-events-none" draggable="false" />
+                    <div class="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold z-0 shadow-lg uppercase tracking-wider">After</div>
+                    <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&q=80&w=1200" alt="Office Before" class="bna-foreground absolute inset-0 w-full h-full object-cover z-10 pointer-events-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);" draggable="false" />
+                    <div class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold z-20 shadow-lg uppercase tracking-wider transition-opacity duration-200">Before</div>
+                    <div class="bna-handle absolute inset-y-0 w-1 bg-white z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] pointer-events-none" style="left: 50%; transform: translateX(-50%);">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-[0_0_15px_rgba(0,0,0,0.4)] flex items-center justify-center border border-slate-100 transition-transform group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600"><path d="m10 17-5-5 5-5"/><path d="m14 17 5-5-5-5"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 z-30 pointer-events-none">
+                        <h4 class="text-white text-xl font-bold drop-shadow-lg">Commercial Office</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 md:py-24 bg-blue-50 dark:bg-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-emerald-500 font-semibold tracking-wide uppercase mb-2">Testimonials</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">What Our Clients Say</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="p-8 rounded-2xl shadow-sm border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-700 relative transition-colors duration-300">
+                    <div class="flex text-amber-400 mb-6">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-lg italic mb-8 text-slate-600 dark:text-slate-300">"Canada Cleaning completely transformed my house! Their attention to detail is unmatched, and I love that they use eco-friendly products."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Sarah Jenkins" class="w-14 h-14 rounded-full object-cover mr-4" />
+                        <div>
+                            <h5 class="font-bold text-slate-900 dark:text-white">Sarah Jenkins</h5>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Homeowner</p>
+                        </div>
+                    </div>
+                    <i data-lucide="message-circle" class="absolute top-8 right-8 h-12 w-12 opacity-10 text-slate-900 dark:text-white"></i>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="p-8 rounded-2xl shadow-sm border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-700 relative transition-colors duration-300">
+                    <div class="flex text-amber-400 mb-6">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-lg italic mb-8 text-slate-600 dark:text-slate-300">"We hired them for our commercial space and the difference is night and day. Reliable, professional, and very discreet."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="David Chen" class="w-14 h-14 rounded-full object-cover mr-4" />
+                        <div>
+                            <h5 class="font-bold text-slate-900 dark:text-white">David Chen</h5>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Office Manager</p>
+                        </div>
+                    </div>
+                    <i data-lucide="message-circle" class="absolute top-8 right-8 h-12 w-12 opacity-10 text-slate-900 dark:text-white"></i>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="p-8 rounded-2xl shadow-sm border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-700 relative transition-colors duration-300">
+                    <div class="flex text-amber-400 mb-6">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-lg italic mb-8 text-slate-600 dark:text-slate-300">"I use Canada Cleaning for all my move-in/move-out properties. They are my secret weapon for making homes look their absolute best."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150" alt="Emily Thompson" class="w-14 h-14 rounded-full object-cover mr-4" />
+                        <div>
+                            <h5 class="font-bold text-slate-900 dark:text-white">Emily Thompson</h5>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Real Estate Agent</p>
+                        </div>
+                    </div>
+                    <i data-lucide="message-circle" class="absolute top-8 right-8 h-12 w-12 opacity-10 text-slate-900 dark:text-white"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16 md:py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 w-full">
+                <h2 class="text-emerald-500 font-semibold tracking-wide uppercase mb-2">Service Coverage</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Areas We Proudly Serve</h3>
+                <p class="text-base md:text-lg text-slate-600 dark:text-slate-400 mb-8">
+                    We provide professional cleaning services across major metropolitan areas and surrounding suburbs. Check our map or contact us to see if we cover your specific location.
+                </p>
+                <ul class="grid grid-cols-2 gap-4">
+                    <li class="flex items-center text-sm md:text-base text-slate-700 dark:text-slate-300"><i data-lucide="map-pin" class="h-5 w-5 text-emerald-500 mr-2 flex-shrink-0"></i>Toronto, ON</li>
+                    <li class="flex items-center text-sm md:text-base text-slate-700 dark:text-slate-300"><i data-lucide="map-pin" class="h-5 w-5 text-emerald-500 mr-2 flex-shrink-0"></i>Vancouver, BC</li>
+                    <li class="flex items-center text-sm md:text-base text-slate-700 dark:text-slate-300"><i data-lucide="map-pin" class="h-5 w-5 text-emerald-500 mr-2 flex-shrink-0"></i>Montreal, QC</li>
+                    <li class="flex items-center text-sm md:text-base text-slate-700 dark:text-slate-300"><i data-lucide="map-pin" class="h-5 w-5 text-emerald-500 mr-2 flex-shrink-0"></i>Calgary, AB</li>
+                    <li class="flex items-center text-sm md:text-base text-slate-700 dark:text-slate-300"><i data-lucide="map-pin" class="h-5 w-5 text-emerald-500 mr-2 flex-shrink-0"></i>Ottawa, ON</li>
+                    <li class="flex items-center text-sm md:text-base text-slate-700 dark:text-slate-300"><i data-lucide="map-pin" class="h-5 w-5 text-emerald-500 mr-2 flex-shrink-0"></i>Edmonton, AB</li>
+                    <li class="flex items-center text-sm md:text-base text-slate-700 dark:text-slate-300"><i data-lucide="map-pin" class="h-5 w-5 text-emerald-500 mr-2 flex-shrink-0"></i>Winnipeg, MB</li>
+                    <li class="flex items-center text-sm md:text-base text-slate-700 dark:text-slate-300"><i data-lucide="map-pin" class="h-5 w-5 text-emerald-500 mr-2 flex-shrink-0"></i>Halifax, NS</li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 w-full h-64 md:h-80 bg-slate-200 rounded-2xl overflow-hidden relative shadow-lg mt-8 md:mt-0">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80" alt="Map" class="w-full h-full object-cover opacity-60" />
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl flex items-center gap-3">
+                        <i data-lucide="map-pin" class="h-8 w-8 text-emerald-500"></i>
+                        <div>
+                            <p class="font-bold text-slate-900 dark:text-white">Canada Wide Coverage</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Expanding rapidly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-emerald-500 font-semibold tracking-wide uppercase mb-2">Common Questions</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-container rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900 overflow-hidden transition-all duration-200">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none text-slate-900 hover:bg-slate-50 dark:text-white dark:hover:bg-slate-800 transition-colors">
+                        <span class="font-semibold text-lg pr-8">Do I need to be home during the cleaning?</span>
+                        <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-emerald-500 transform transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+                        <p class="text-slate-600 dark:text-slate-400 pb-5">No, you do not need to be home. Many of our clients provide us with a spare key or garage code. We are fully insured and bonded for your peace of mind.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-container rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900 overflow-hidden transition-all duration-200">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none text-slate-900 hover:bg-slate-50 dark:text-white dark:hover:bg-slate-800 transition-colors">
+                        <span class="font-semibold text-lg pr-8">Are your cleaning products safe for pets and children?</span>
+                        <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-emerald-500 transform transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+                        <p class="text-slate-600 dark:text-slate-400 pb-5">Absolutely! We prioritize eco-friendly, non-toxic cleaning products that are tough on dirt but completely safe for your family and furry friends.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-container rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900 overflow-hidden transition-all duration-200">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none text-slate-900 hover:bg-slate-50 dark:text-white dark:hover:bg-slate-800 transition-colors">
+                        <span class="font-semibold text-lg pr-8">What is included in a standard cleaning?</span>
+                        <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-emerald-500 transform transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+                        <p class="text-slate-600 dark:text-slate-400 pb-5">A standard cleaning includes dusting all surfaces, vacuuming and mopping floors, cleaning and sanitizing bathrooms, and wiping down kitchen counters and appliance exteriors.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-container rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900 overflow-hidden transition-all duration-200">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none text-slate-900 hover:bg-slate-50 dark:text-white dark:hover:bg-slate-800 transition-colors">
+                        <span class="font-semibold text-lg pr-8">What if I am not satisfied with the service?</span>
+                        <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-emerald-500 transform transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+                        <p class="text-slate-600 dark:text-slate-400 pb-5">We offer a 100% Satisfaction Guarantee. If you are not happy with any area we cleaned, let us know within 24 hours, and we will re-clean it for free.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-emerald-500 font-semibold tracking-wide uppercase mb-2">Get in Touch</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Ready for a cleaner space?</h3>
+                <p class="text-lg text-slate-600 dark:text-slate-400">Contact our dedicated team today to discuss your cleaning needs and get a customized quote.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Phone Card -->
+                <div class="flex flex-col items-center text-center p-8 rounded-2xl border transition-transform hover:-translate-y-2 bg-white border-slate-100 shadow-xl shadow-slate-200/50 dark:bg-slate-800 dark:border-slate-700 dark:shadow-none">
+                    <div class="h-16 w-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-6">
+                        <i data-lucide="phone-call" class="h-8 w-8 text-emerald-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Phone</h4>
+                    <p class="text-lg font-medium mb-1 text-slate-700 dark:text-slate-300">1-800-CLEAN-NOW</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Call us for immediate assistance</p>
+                </div>
+
+                <!-- Email Card -->
+                <div class="flex flex-col items-center text-center p-8 rounded-2xl border transition-transform hover:-translate-y-2 bg-white border-slate-100 shadow-xl shadow-slate-200/50 dark:bg-slate-800 dark:border-slate-700 dark:shadow-none">
+                    <div class="h-16 w-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-6">
+                        <i data-lucide="mail" class="h-8 w-8 text-emerald-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Email</h4>
+                    <p class="text-lg font-medium mb-1 text-slate-700 dark:text-slate-300">hello@canadacleaning.ca</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">We'll reply within 24 hours</p>
+                </div>
+
+                <!-- Hours Card -->
+                <div class="flex flex-col items-center text-center p-8 rounded-2xl border transition-transform hover:-translate-y-2 bg-white border-slate-100 shadow-xl shadow-slate-200/50 dark:bg-slate-800 dark:border-slate-700 dark:shadow-none">
+                    <div class="h-16 w-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-6">
+                        <i data-lucide="clock" class="h-8 w-8 text-emerald-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Business Hours</h4>
+                    <p class="text-base font-medium text-slate-700 dark:text-slate-300">Mon - Fri: 8:00 AM - 6:00 PM</p>
+                    <p class="text-base font-medium mb-1 text-slate-700 dark:text-slate-300">Sat: 9:00 AM - 2:00 PM</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-16 border-t border-transparent dark:bg-black dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center mb-6 cursor-pointer" onclick="window.scrollTo(0,0)">
+                        <i data-lucide="sparkles" class="h-8 w-8 text-emerald-500 mr-2"></i>
+                        <span class="font-bold text-2xl tracking-tight text-white">
+                            Canada <span class="text-emerald-500">Cleaning</span>
+                        </span>
+                    </div>
+                    <p class="mb-6 text-slate-400 leading-relaxed">
+                        Premium residential and commercial cleaning services across Canada. Trusted, reliable, and eco-friendly.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="hover:text-emerald-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+                        <li><a href="#process" class="hover:text-emerald-400 transition-colors">Our Process</a></li>
+                        <li><a href="#testimonials" class="hover:text-emerald-400 transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="hover:text-emerald-400 transition-colors">Residential Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition-colors">Commercial Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition-colors">Deep Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition-colors">Move-In / Move-Out</a></li>
+                        <li><a href="#services" class="hover:text-emerald-400 transition-colors">Post-Construction</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center md:flex md:justify-between items-center text-slate-500">
+                <p>&copy; <span id="year"></span> Canada Cleaning. All rights reserved.</p>
+                <p class="mt-4 md:mt-0">Designed for perfection.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="fixed bottom-6 right-6 flex flex-col space-y-4 z-40">
+        <button id="scrollTopBtn" class="h-12 w-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 translate-y-10 pointer-events-none bg-white text-emerald-500 hover:bg-slate-50 dark:bg-slate-800 dark:text-emerald-400 dark:hover:bg-slate-700" aria-label="Scroll to top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+            <i data-lucide="arrow-up" class="w-6 h-6"></i>
+        </button>
+
+        <a href="https://wa.me/1234567890" target="_blank" rel="noreferrer" class="h-14 w-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-xl shadow-green-500/30 flex items-center justify-center transition-transform hover:-translate-y-1" aria-label="Contact on WhatsApp">
+            <i data-lucide="message-circle" class="w-7 h-7"></i>
+        </a>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // DOM Elements
+        const html = document.documentElement;
+        const nav = document.getElementById('navbar');
+        const navLogoText = document.getElementById('nav-logo-text');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
+        
+        // Dark Mode DOM Elements
+        const darkToggleDesk = document.getElementById('darkModeToggle');
+        const darkToggleMobile = document.getElementById('darkModeToggleMobile');
+        const moonIcon = document.getElementById('moonIcon');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIconMobile = document.getElementById('moonIconMobile');
+        const sunIconMobile = document.getElementById('sunIconMobile');
+
+        let isDarkMode = false;
+        let isScrolled = false;
+
+        // Dark Mode Logic
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            if (isDarkMode) {
+                html.classList.add('dark');
+                moonIcon.classList.replace('block', 'hidden');
+                sunIcon.classList.replace('hidden', 'block');
+                moonIconMobile.classList.replace('block', 'hidden');
+                sunIconMobile.classList.replace('hidden', 'block');
+            } else {
+                html.classList.remove('dark');
+                moonIcon.classList.replace('hidden', 'block');
+                sunIcon.classList.replace('block', 'hidden');
+                moonIconMobile.classList.replace('hidden', 'block');
+                sunIconMobile.classList.replace('block', 'hidden');
+            }
+            updateNavbarStyle(); // Refresh navbar colors based on new mode
+        }
+
+        darkToggleDesk.addEventListener('click', toggleDarkMode);
+        darkToggleMobile.addEventListener('click', toggleDarkMode);
+
+        // Scroll Logic & Navbar Styling
+        function updateNavbarStyle() {
+            if (isScrolled) {
+                // Scrolled State
+                if (isDarkMode) {
+                    nav.className = "fixed w-full z-50 transition-all duration-300 bg-slate-900/95 shadow-md backdrop-blur-sm border-b border-slate-800";
+                    navLogoText.classList.replace('text-slate-900', 'text-white'); // Fallback if toggled
+                    navLogoText.classList.remove('text-slate-900');
+                    navLogoText.classList.add('text-white');
+                    navLinks.forEach(l => { l.classList.remove('text-slate-600', 'text-slate-200'); l.classList.add('text-slate-300'); });
+                    darkToggleDesk.classList.replace('hover:bg-white/20', 'hover:bg-slate-800');
+                    darkToggleDesk.classList.replace('text-white', 'text-slate-300');
+                    mobileMenuBtn.classList.replace('hover:bg-white/20', 'hover:bg-slate-800');
+                    mobileMenuBtn.classList.replace('text-white', 'text-slate-300');
+                    darkToggleMobile.classList.replace('hover:bg-white/20', 'hover:bg-slate-800');
+                    darkToggleMobile.classList.replace('text-white', 'text-slate-300');
+                } else {
+                    nav.className = "fixed w-full z-50 transition-all duration-300 bg-white/95 shadow-md backdrop-blur-sm border-b border-slate-100";
+                    navLogoText.classList.remove('text-white');
+                    navLogoText.classList.add('text-slate-900');
+                    navLinks.forEach(l => { l.classList.remove('text-slate-200', 'text-slate-300'); l.classList.add('text-slate-600'); });
+                    darkToggleDesk.classList.replace('hover:bg-white/20', 'hover:bg-slate-100');
+                    darkToggleDesk.classList.replace('text-white', 'text-slate-600');
+                    mobileMenuBtn.classList.replace('hover:bg-white/20', 'hover:bg-slate-100');
+                    mobileMenuBtn.classList.replace('text-white', 'text-slate-900');
+                    darkToggleMobile.classList.replace('hover:bg-white/20', 'hover:bg-slate-100');
+                    darkToggleMobile.classList.replace('text-white', 'text-slate-600');
+                }
+            } else {
+                // Top State (Transparent)
+                nav.className = "fixed w-full z-50 transition-all duration-300 bg-transparent border-b border-transparent";
+                navLogoText.classList.remove('text-slate-900');
+                navLogoText.classList.add('text-white');
+                navLinks.forEach(l => { l.classList.remove('text-slate-600', 'text-slate-300'); l.classList.add('text-slate-200'); });
+                darkToggleDesk.classList.replace('hover:bg-slate-800', 'hover:bg-white/20');
+                darkToggleDesk.classList.replace('hover:bg-slate-100', 'hover:bg-white/20');
+                darkToggleDesk.classList.replace('text-slate-300', 'text-white');
+                darkToggleDesk.classList.replace('text-slate-600', 'text-white');
+                
+                mobileMenuBtn.classList.replace('hover:bg-slate-800', 'hover:bg-white/20');
+                mobileMenuBtn.classList.replace('hover:bg-slate-100', 'hover:bg-white/20');
+                mobileMenuBtn.classList.replace('text-slate-300', 'text-white');
+                mobileMenuBtn.classList.replace('text-slate-900', 'text-white');
+
+                darkToggleMobile.classList.replace('hover:bg-slate-800', 'hover:bg-white/20');
+                darkToggleMobile.classList.replace('hover:bg-slate-100', 'hover:bg-white/20');
+                darkToggleMobile.classList.replace('text-slate-300', 'text-white');
+                darkToggleMobile.classList.replace('text-slate-600', 'text-white');
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            isScrolled = window.scrollY > 50;
+            updateNavbarStyle();
+            
+            // Scroll to top button visibility
+            if (isScrolled) {
+                scrollTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        // Mobile Menu Toggle Logic
+        let isMobileMenuOpen = false;
+        function toggleMobileMenu() {
+            isMobileMenuOpen = !isMobileMenuOpen;
+            if (isMobileMenuOpen) {
+                mobileMenu.classList.replace('opacity-0', 'opacity-100');
+                mobileMenu.classList.replace('scale-y-95', 'scale-y-100');
+                mobileMenu.classList.replace('invisible', 'visible');
+                menuIcon.classList.replace('block', 'hidden');
+                closeIcon.classList.replace('hidden', 'block');
+            } else {
+                mobileMenu.classList.replace('opacity-100', 'opacity-0');
+                mobileMenu.classList.replace('scale-y-100', 'scale-y-95');
+                mobileMenu.classList.replace('visible', 'invisible');
+                menuIcon.classList.replace('hidden', 'block');
+                closeIcon.classList.replace('block', 'hidden');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if(isMobileMenuOpen) toggleMobileMenu();
+            });
+        });
+
+        // FAQ Accordion Logic
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('.faq-icon');
+                const isOpen = content.classList.contains('max-h-48');
+
+                // Close all other FAQs
+                document.querySelectorAll('.faq-content').forEach(c => {
+                    c.classList.remove('max-h-48', 'opacity-100', 'py-5');
+                    c.classList.add('max-h-0', 'opacity-0');
+                });
+                document.querySelectorAll('.faq-icon').forEach(i => {
+                    i.classList.remove('rotate-180');
+                });
+
+                // Toggle current FAQ
+                if (!isOpen) {
+                    content.classList.remove('max-h-0', 'opacity-0');
+                    content.classList.add('max-h-48', 'opacity-100', 'py-5');
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+
+        // Before & After Sliders Logic
+        const sliders = document.querySelectorAll('.bna-container');
+        sliders.forEach(slider => {
+            const foreground = slider.querySelector('.bna-foreground');
+            const handle = slider.querySelector('.bna-handle');
+
+            const moveSlider = (e) => {
+                const rect = slider.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const x = clientX - rect.left;
+                const position = Math.max(0, Math.min((x / rect.width) * 100, 100));
+                
+                foreground.style.clipPath = `polygon(0 0, ${position}% 0, ${position}% 100%, 0 100%)`;
+                handle.style.left = `${position}%`;
+            };
+
+            slider.addEventListener('mousemove', moveSlider);
+            slider.addEventListener('touchmove', moveSlider, { passive: true });
+        });
+
+    </script>
+</body>
+</html>
